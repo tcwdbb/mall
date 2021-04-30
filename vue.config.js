@@ -28,5 +28,13 @@ module.exports={
       .set('network',resolve('./src/network'))
       //set第一个参数：设置的别名，第二个参数：设置的路径
 　　　　
-  }
+  },
+//   devServer: {
+//     disableHostCheck: false,
+//     host: "192.168.43.3",
+//     port: 8080,
+//     https: false,
+//     hotOnly: false,
+//     proxy: null
+// }
 }
