@@ -38,8 +38,7 @@ import NavBar from "components/common/navbar/NavBar";
 import TabControl from "components/content/tabcontrol/TabControl";
 import GoodsList from "components/content/goodslist/GoodsList.vue";
 import Scroll from "components/common/scroll/Scroll.vue";
-import BackTop from "components/content/backtop/BackTop.vue";
-import {imgListenerMixin} from 'common/mixin'
+import {imgListenerMixin, backTopMixin} from 'common/mixin';
 
 import HomeSwiper from "./childComps/HomeSwiper";
 import RecommendView from "./childComps/RecommendView";
@@ -50,7 +49,7 @@ import { getHomeMultiata, getHomeGoods } from "network/home";
 
 export default {
   name: "Home",
-  mixins: [imgListenerMixin],
+  mixins: [imgListenerMixin, backTopMixin],
   data() {
     return {
       banners: [],
@@ -61,7 +60,6 @@ export default {
         sell: { page: 0, list: [] },
       },
       currentType: "pop",
-      isShowBackTop: false,
       loading: false,
       tabOffsetTop: 0,
       isTabFiexd: false,
@@ -93,7 +91,6 @@ export default {
     TabControl,
     GoodsList,
     Scroll,
-    BackTop,
   },
   created() {
     // 1.请求多个数据
@@ -130,17 +127,11 @@ export default {
       this.$refs.tabControl1.currentIndex = index;
     },
     /**
-     * 点击回到顶部
-     */
-    backTopClick() {
-      this.$refs.scroll.backTop(0, 0);
-    },
-    /**
      * 根据当前位置判断backtop组件是否显示
      */
     curPosition(position) {
       //根据当前位置判断backtop组件是否显示
-      this.isShowBackTop = position.y < -1000;
+      this.listenShowBackTop(position)
       //判断tabControl是否吸顶
       this.isTabFiexd = position.y < -this.tabOffsetTop + 44;
     },
@@ -192,36 +183,17 @@ export default {
 
 <style scoped>
 #home {
-  /* position: relative; */
   height: 100vh;
-  /* padding-top: 44px; */
 }
 
 #home .home-nav {
+  font-size: 16px;
   color: #fff;
   background-color: var(--color-tint);
-  /* position: sticky; */
-  /* top: 0; */
-  /* left: 0;
-  right: 0; */
-  /* z-index: 99; */
 }
-
-/* .tab-position {
-  position: sticky;
-  top: 44px;
-} */
-
-/* .content {
-  position: absolute;
-  top: 44px;
-  bottom: 49px;
-  overflow: hidden;
-} */
 
 .content {
   height: calc(100% - 93px);
-  /* margin-top: 44px; */
   overflow: hidden;
 }
 

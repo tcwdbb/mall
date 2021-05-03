@@ -8,7 +8,8 @@
 
 <script>
 import BScroll from "better-scroll";
-
+import ObserveImage from '@better-scroll/observe-image'
+BScroll.use(ObserveImage);
 export default {
   name: "Scroll",
   props: {
@@ -29,6 +30,7 @@ export default {
   mounted() {
     this.scroll = new BScroll(this.$refs.wrapper, {
       observeDOM: true,
+      observeImage: true,
       click: true,
       probeType: this.probeType,
       pullUpLoad: this.pullUpLoad,

@@ -63,3 +63,9 @@ h5,
 h6{
   font-weight: normal;
 }
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}

@@ -6,7 +6,7 @@
     <div class="price-info">
       <span class="price">{{goods.price}}</span>
       <span class="old-price">{{goods.oldPrice}}</span>
-      <span class="discount-desc" :style="{backgroundColor: goods.discountBgColor}">{{goods.discountDesc}}</span>
+      <span v-if="goods.discountDesc.length" class="discount-desc" :style="{backgroundColor: goods.discountBgColor}">{{goods.discountDesc}}</span>
     </div>
     <div class="other-info">
       <span>{{goods.columns[0]}}</span>

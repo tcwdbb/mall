@@ -26,6 +26,7 @@ module.exports={
       .set('common',resolve('./src/common'))
       .set('views',resolve('./src/views'))
       .set('network',resolve('./src/network'))
+      .set('store',resolve('./src/store'))
       //set第一个参数：设置的别名，第二个参数：设置的路径
 　　　　
   },

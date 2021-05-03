@@ -37,7 +37,6 @@ export default {
     //格式化日期
     createdFilter(val) {
       const date = new Date(val*1000);
-      console.log(date)
       return dateFormat("YYYY-mm-dd HH:MM", date);
     }
   }

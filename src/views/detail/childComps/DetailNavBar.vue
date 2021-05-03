@@ -1,7 +1,7 @@
 <template>
   <nav-bar>
     <template v-slot:left>
-      <div class="back" @click="backClick">&lt;</div>
+      <i class="back iconfont" @click="backClick">&#xe665;</i>
     </template>
     <template v-slot:center>
       <div class="title">
@@ -35,6 +35,7 @@ export default {
   methods: {
     activeClick(index) {
       this.curIndex = index;
+      this.$emit('tabClick', index);
     },
     backClick() {
       this.$router.back();
@@ -59,5 +60,9 @@ export default {
 
 .active {
   color: var(--color-high-text);
+}
+
+.back {
+  
 }
 </style>

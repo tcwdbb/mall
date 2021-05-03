@@ -43,6 +43,7 @@ export default {
     text-align: center;
     justify-items: center;
     height: 49px;
+    padding-top: 8px;
   }
 
   .tab-bar-item .iconfont{
