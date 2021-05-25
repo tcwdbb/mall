@@ -38,7 +38,7 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 49px;
+    height: 52px;
     background-color: #fff;
     border-top: 1px solid rgba(0, 0, 0, .05);
     /* z-index: 99; */

@@ -1,5 +1,5 @@
 import {debounce} from 'common/utils'
-import {BACK_POSITION} from 'common/const';
+import {BACK_POSITION } from 'common/const';
 import BackTop from "components/content/backtop/BackTop.vue";
 
 export const imgListenerMixin = {
@@ -32,6 +32,24 @@ export const backTopMixin = {
     },
     listenShowBackTop(position) {
       this.isShowBackTop = position.y < BACK_POSITION;
+    },
+  }
+}
+
+export const switchCurTypeMixin = {
+  methods: {
+    switchCurType(index) {
+      switch (index) {
+        case 0:
+          this.currentType = "pop";
+          break;
+        case 1:
+          this.currentType = "new";
+          break;
+        case 2:
+          this.currentType = "sell";
+          break;
+      }
     }
   }
 }

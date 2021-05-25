@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2508542 */
-  src: url('./iconfont/iconfont.woff2?t=1619868869838') format('woff2'),
-       url('./iconfont/iconfont.woff?t=1619868869838') format('woff'),
-       url('./iconfont/iconfont.ttf?t=1619868869838') format('truetype');
+  src: url('./iconfont/iconfont.woff2?t=1620053631324') format('woff2'),
+       url('./iconfont/iconfont.woff?t=1620053631324') format('woff'),
+       url('./iconfont/iconfont.ttf?t=1620053631324') format('truetype');
 }
 
 .iconfont {
@@ -13,16 +13,44 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-shouji:before {
+  content: "\e603";
+}
+
+.icon-jifen:before {
+  content: "\e65e";
+}
+
+.icon-left:before {
+  content: "\e615";
+}
+
+.icon-denglu:before {
+  content: "\e67c";
+}
+
+.icon-xiangyou:before {
+  content: "\e613";
+}
+
+.icon-gouwu:before {
+  content: "\e60a";
+}
+
+.icon-xinfeng:before {
+  content: "\e857";
+}
+
+.icon-huangguan:before {
+  content: "\e638";
+}
+
 .icon-xuanzhong:before {
   content: "\e656";
 }
 
 .icon-customer:before {
   content: "\e69f";
-}
-
-.icon-huitui:before {
-  content: "\e665";
 }
 
 .icon-dianpu:before {

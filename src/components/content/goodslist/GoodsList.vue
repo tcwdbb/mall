@@ -27,14 +27,6 @@ export default {
   .goods-list {
     display: flex;
     flex-wrap: wrap;
-  }
-
-  .goods-list .goods-item {
-    
-  }
-
-  .goods-list .goods-item:nth-child(2n) {
-    /* padding-left: 1px; */
-    /* margin-left: -2px; */
+    background-color: #fff;
   }
 </style>

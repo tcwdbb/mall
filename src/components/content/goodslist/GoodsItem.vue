@@ -22,14 +22,17 @@ export default {
     }
   },
   computed: {
+    //由于接口数据字段不同，复用需要判断是否有这个字段
     showImage() {
-      return this.goodsItem.image || this.goodsItem.show.img
+      return this.goodsItem.image || this.goodsItem.img || this.goodsItem.show.img
     }
   },
   methods: {
+    //图片加载完成后发送一个事件总线刷新BScroll的高度
     loadEnd() {
       this.$bus.$emit('imgLoadEnd');
     },
+    //点击跳转路由，并传递当前商品id
     itemClick() {
       this.$router.push('/detail/' + this.goodsItem.iid);
     }

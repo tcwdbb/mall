@@ -21,6 +21,15 @@ export default {
       type: Boolean,
       default: false,
     },
+    pullDownRefresh: {
+      type: Object,
+      default() {
+        return {
+          threshold: 0,
+          stop: 0
+        }
+      }
+    }
   },
   data() {
     return {
@@ -29,12 +38,18 @@ export default {
   },
   mounted() {
     this.scroll = new BScroll(this.$refs.wrapper, {
+      // mouseWheel: true,
+      // tap: true,
       observeDOM: true,
       observeImage: true,
       click: true,
       probeType: this.probeType,
       pullUpLoad: this.pullUpLoad,
+      pullDownRefresh: this.pullDownRefresh
     });
+      this.scroll.on('pullingDown', () => {
+      this.$emit('onPullingDown');
+    })
     //监听滚动并传出当前位置
     if (this.probeType === 2 || this.probeType === 3) {
       this.scroll.on("scroll", (position) => {
@@ -59,6 +74,9 @@ export default {
 
     finishPullUp() {
       this.scroll.finishPullUp();
+    },
+     finishPullDown() {
+      this.scroll.finishPullDown();
     },
     refresh() {
       this.scroll && this.scroll.refresh();

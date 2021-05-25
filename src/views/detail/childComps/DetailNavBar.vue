@@ -1,7 +1,7 @@
 <template>
   <nav-bar>
     <template v-slot:left>
-      <i class="back iconfont" @click="backClick">&#xe665;</i>
+      <i class="back iconfont" @click="backClick">&#xe615;</i>
     </template>
     <template v-slot:center>
       <div class="title">

@@ -22,6 +22,7 @@ export default {
   },
   computed: {
     isActive() {
+      
       return this.$route.path.indexOf(this.path) != -1
     },
     activeStyle() {
@@ -43,7 +44,7 @@ export default {
     text-align: center;
     justify-items: center;
     height: 49px;
-    padding-top: 8px;
+    padding-top: 6px;
   }
 
   .tab-bar-item .iconfont{

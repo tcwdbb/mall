@@ -23,8 +23,10 @@ export default {
     }
   },
   methods: {
+    //点击改变当前tab样式
     activeStyle(index){
       this.currentIndex = index;
+      //发送事件传递下标（请求新的数据）
       this.$emit('tabClick', index);
     }
   }
